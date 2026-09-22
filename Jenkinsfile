@@ -47,8 +47,8 @@ pipeline {
                             git config user.name "Jenkins CI"
                             
                             # Update image repository, tag, and port in values.yaml
-                            sed -i '' "s|repository:.*|repository: ${DOCKER_USER}/${IMAGE_NAME}|g" charts/nginx-chart/values.yaml
-                            sed -i '' "s|tag:.*|tag: \"${IMAGE_TAG}\"|g" charts/nginx-chart/values.yaml
+                            sed -i '' "s|repository:.*|repository: ${DOCKER_USER}/${IMAGE_NAME}|g" nginx-chart/values.yaml
+                            sed -i '' "s|tag:.*|tag: \"${IMAGE_TAG}\"|g" nginx-chart/values.yaml
                             
                             git add charts/nginx-chart/values.yaml
                             git commit -m "ci: update image tag to ${IMAGE_TAG} [skip ci]" || echo "No changes to commit"
