@@ -1,9 +1,9 @@
 
 replicaCount: 3
 image:
-  repository: nginx
+  repository: sruthibabu1/devsecops-sample-app
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: 10
 
 imagePullSecrets: []
 nameOverride: ""
