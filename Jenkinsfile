@@ -50,7 +50,7 @@ pipeline {
                             sed -i '' "s|repository:.*|repository: ${DOCKER_USER}/${IMAGE_NAME}|g" nginx-chart/values.yaml
                             sed -i '' "s|tag:.*|tag: \"${IMAGE_TAG}\"|g" nginx-chart/values.yaml
                             
-                            git add charts/nginx-chart/values.yaml
+                            git add nginx-chart/values.yaml
                             git commit -m "ci: update image tag to ${IMAGE_TAG} [skip ci]" || echo "No changes to commit"
                             git push https://${GH_USER}:${GH_TOKEN}@${REPO_URL} HEAD:main
                         '''
